@@ -1,8 +1,10 @@
+FROM python:3.9-slim
 
-FROM python:3.11-slim
+# Копируем все файлы из текущей директории в /app контейнера
+COPY . /app
 
-COPY app.py /app/app.py
-
+# Устанавливаем рабочую директорию в контейнере
 WORKDIR /app
 
-CMD [ "python","app.py" ]
+# Команда для запуска приложения
+CMD ["python", "app.py"]
